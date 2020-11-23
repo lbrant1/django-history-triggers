@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.db import connections, transaction
-from django.utils import six
+from six import string_types
 from django.utils.encoding import force_bytes
 
 from history import conf
@@ -22,7 +22,7 @@ def maybe_quote(value):
     """
     if value is None:
         return 'NULL'
-    elif isinstance(value, six.string_types):
+    elif isinstance(value, string_types):
         return "'%s'" % value.replace("'", "''")
     return value
 

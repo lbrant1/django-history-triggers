@@ -12,6 +12,10 @@ setup(
     url='https://github.com/imsweb/django-history-triggers',
     license='BSD',
     packages=find_packages(exclude=('testapp',)),
+    install_requires=[
+        'six>=1.12,<1.20',
+        'django>=2.0,<4.0'
+    ],
     include_package_data=True,
     classifiers=[
         'Development Status :: 5 - Production/Stable',
